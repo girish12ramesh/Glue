@@ -1,7 +1,6 @@
 # Glue  [ ![Download](https://api.bintray.com/packages/rohitshampur/maven/Glue/images/download.svg) ](https://bintray.com/rohitshampur/maven/Glue/_latestVersion) [![License](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 ## A lightweight view and resource injection library for android 
 
-
 ###Usage
 To start using this library create a class MyApplication extending Application class.
 
