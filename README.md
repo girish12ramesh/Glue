@@ -80,7 +80,7 @@ public class MyFragment extends Fragment {
 ####NOTE : To use @StickToView without specifiying the id you need to declare the variable name as same as the id in the layout xml
 
 This library is inspired from [**Android Annotations library**](https://android-arsenal.com/details/1/128) and 
-[**IntectIO**](https://android-arsenal.com/details/1/2994)
+[**InjectIO**](https://android-arsenal.com/details/1/2994)
 
 ###License
 
