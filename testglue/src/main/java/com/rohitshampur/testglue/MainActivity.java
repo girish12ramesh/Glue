@@ -1,12 +1,16 @@
 package com.rohitshampur.testglue;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.rohitshampur.glue.Glue;
+import com.rohitshampur.glue.StickToResource;
+import com.rohitshampur.glue.StickToView;
 
+public class MainActivity extends AppCompatActivity {
 
     @StickToView
     private TextView textView;
@@ -18,8 +22,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Glue.stickTo(this, R.id.class);
+        Glue.stickTo(this);
         textView.setText("Testing glue");
-        Toast.makeText(this,name,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, name, Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, FragmentActivity.class));
     }
 }

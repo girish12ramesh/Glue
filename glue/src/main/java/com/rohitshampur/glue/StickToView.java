@@ -1,4 +1,4 @@
-package com.rohitshampur.testglue;
+package com.rohitshampur.glue;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Inherited;

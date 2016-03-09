@@ -1,4 +1,4 @@
-package com.rohitshampur.testglue;
+package com.rohitshampur.glue;
 
 /**
  * Created by rohit on 9/3/16.

@@ -1,1 +1,1 @@
-include ':app', ':glue'
+include ':glue', ':testglue'

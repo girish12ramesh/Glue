@@ -1,6 +1,7 @@
-package com.rohitshampur.testglue;
+package com.rohitshampur.glue;
 
 
+import android.app.Activity;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -13,15 +14,20 @@ public class Glue {
 
   private Glue() { }
 
-  public static void stickTo(Object activity,Class claz) {
+  public static void init(Class claz){
     aClass = claz;
-    Class<?> clazz = (null == activity) ? activity.getClass() : activity.getClass();
+  }
+  public static void stickTo(Object activity,Object view) {
+    if(view==null){
+        view=activity;
+    }
+    Class<?> clazz = (null == view) ? activity.getClass() : view.getClass();
     Field[] fields = activity.getClass().getDeclaredFields();
     Method findViewById = getMethod(clazz, "findViewById", Integer.TYPE);
 
     for (Field field : fields) {
-      if (null != findViewById) {
-        stickToView(activity, field, findViewById);
+      if (findViewById!=null) {
+        stickToView(activity,view, field, findViewById);
       }
 
       StickToResource stickToRes = field.getAnnotation(StickToResource.class);
@@ -29,7 +35,7 @@ public class Glue {
       if (null != stickToRes) {
         try {
           int valId = stickToRes.value();
-          stickToRes(activity, clazz, valId, field);
+          stickToRes(activity,view, clazz, valId, field);
         } catch (InvocationTargetException e) {
           throw new IllegalArgumentException(e);
         } catch (IllegalAccessException e) {
@@ -38,8 +44,12 @@ public class Glue {
       }
     }
   }
+  public static void stickTo(Object object) {
+    stickTo(object, null);
+    Activity ac = (Activity) object;
+  }
 
-  private static void stickToView(Object activity, Field field, Method findViewById) {
+  private static void stickToView(Object activity,Object view, Field field, Method findViewById) {
     field.setAccessible(true);
     StickToView injectToView = field.getAnnotation(StickToView.class);
 
@@ -52,9 +62,9 @@ public class Glue {
         f = aClass.getDeclaredField(res);
         int id1 = f.getInt(aClass);
         if (id == -1) {
-          field.set(activity, findViewById.invoke(activity, id1));
+          field.set(activity, findViewById.invoke(view, id1));
         }else{
-          field.set(activity, findViewById.invoke(activity, id));
+          field.set(activity, findViewById.invoke(view, id));
         }
       } catch (NoSuchFieldException e) {
         e.printStackTrace();
@@ -77,16 +87,16 @@ public class Glue {
     return -1;
   }*/
 
-  private static void stickToRes(Object activity, Class<?> activityClazz,
+  private static void stickToRes(Object activity,Object view, Class<?> viewClazz,
       int valId, Field field) throws InvocationTargetException, IllegalAccessException {
     field.setAccessible(true);
 
     Class<?> t = field.getType();
-    Method getResources = getMethod(activityClazz, "getResources");
+    Method getResources = getMethod(viewClazz, "getResources");
     Object context = null;
 
     if (null == getResources) {
-      Method getContext = getMethod(activityClazz, "getContext");
+      Method getContext = getMethod(viewClazz, "getContext");
 
       if (null != getContext) {
         context = getContext.invoke(activity);
@@ -95,7 +105,7 @@ public class Glue {
     }
 
     if (t.isAssignableFrom(String.class) && !t.isArray()) {
-      Method getString = getMethod(activityClazz, "getString", Integer.TYPE);
+      Method getString = getMethod(viewClazz, "getString", Integer.TYPE);
       Object result = invoke(getString, activity, valId);
 
       field.set(activity, (null != result) ? result : "");
@@ -104,7 +114,7 @@ public class Glue {
       Class<?> resourcesClazz = resources.getClass();
 
       if (t.isAssignableFrom(String.class)) {
-        Method getString = getMethod(activityClazz, "getString", Integer.TYPE);
+        Method getString = getMethod(viewClazz, "getString", Integer.TYPE);
         Object result = invoke(getString, resources, valId);
 
         field.set(activity, (null != result) ? result : "");

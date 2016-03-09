@@ -1,4 +1,4 @@
-package com.rohitshampur.testglue;
+package com.rohitshampur.glue;
 
 import org.junit.Test;
 
