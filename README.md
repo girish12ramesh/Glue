@@ -1,2 +1,2 @@
 # Glue
-View Injection library
+## A lightweight Dependency injection library for android 
