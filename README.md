@@ -3,6 +3,19 @@
 
 
 ###Usage
+
+Add below dependency to build.gradle
+
+```
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.rohitshampur.glue:glue:1.0.1'
+}
+```
+
 To start using this library create a class MyApplication extending Application class.
 
 ```
