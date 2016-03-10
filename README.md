@@ -3,7 +3,7 @@
 
 
 ###Usage
-
+#####gradle dependency
 Add below dependency to build.gradle
 
 ```
@@ -14,6 +14,18 @@ repositories {
 dependencies {
     compile 'com.rohitshampur.glue:glue:1.0.1'
 }
+```
+
+#####Maven dependency
+
+Add this dependency to pom.xml
+```
+<dependency>
+  <groupId>com.rohitshampur.glue</groupId>
+  <artifactId>glue</artifactId>
+  <version>1.0.1</version>
+  <type>pom</type>
+</dependency>
 ```
 
 To start using this library create a class MyApplication extending Application class.
