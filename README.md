@@ -49,7 +49,7 @@ Now start using the library like this
 public class MainActivity extends AppCompatActivity {
 
     @StickToView
-    private TextView textView;
+    private TextView textView;  //variable name must be same as the id in the layout xml
     
     @StickToView(R.id.textView1)
     private TextView text1;
