@@ -40,6 +40,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        
         Glue.prepare(R.id.class) //Initialize glue like this
 
     }
@@ -74,7 +75,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Glue.stickTo(this);
+        
+        Glue.stickTo(this); //Initialize
+        
         textView.setText("Testing glue");
         Toast.makeText(this, name, Toast.LENGTH_SHORT).show();
         startActivity(new Intent(this, FragmentActivity.class));
@@ -94,7 +97,9 @@ public class MyFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        
         Glue.stickTo(this, view);
+        
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
