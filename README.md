@@ -98,7 +98,7 @@ public class MyFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         
-        Glue.stickTo(this, view);
+        Glue.stickTo(this, view);//Initialize
         
         button.setOnClickListener(new View.OnClickListener() {
             @Override
