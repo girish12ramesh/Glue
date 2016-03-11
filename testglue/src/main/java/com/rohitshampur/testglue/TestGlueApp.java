@@ -11,6 +11,6 @@ public class TestGlueApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Glue.init(R.id.class);
+        Glue.prepare(R.id.class);
     }
 }

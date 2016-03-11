@@ -14,7 +14,7 @@ public class Glue {
 
   private Glue() { }
 
-  public static void init(Class claz){
+  public static void prepare(Class claz){
     aClass = claz;
   }
   public static void stickTo(Object activity,Object view) {

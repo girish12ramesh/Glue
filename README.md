@@ -39,7 +39,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Glue.init(R.id.class) //Initialize glue like this
+        Glue.prepare(R.id.class) //Initialize glue like this
 
     }
 }

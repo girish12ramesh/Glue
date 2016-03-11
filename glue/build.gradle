@@ -13,7 +13,7 @@ ext {
     siteUrl = 'https://github.com/rohitshampur/Glue'
     gitUrl = 'https://github.com/rohitshampur/Glue.git'
 
-    libraryVersion = '1.0.2'
+    libraryVersion = '1.0.3'
 
     developerId = 'rohitshampur'
     developerName = 'Rohit Shampur'
