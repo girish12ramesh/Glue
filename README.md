@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.rohitshampur.glue:glue:1.0.1'
+    compile 'com.rohitshampur.glue:glue:1.0.2'
 }
 ```
 
