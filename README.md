@@ -1,4 +1,4 @@
-# Glue  [ ![Download](https://api.bintray.com/packages/rohitshampur/maven/Glue/images/download.svg) ](https://bintray.com/rohitshampur/maven/Glue/_latestVersion) [![License](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0)[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Glue-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/3264)
+# Glue  [ ![Download](https://api.bintray.com/packages/rohitshampur/maven/Glue/images/download.svg) ](https://bintray.com/rohitshampur/maven/Glue/_latestVersion) [![License](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Glue-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/3264)
 
 <a href='https://bintray.com/rohitshampur/maven/Glue/view?source=watch' alt='Get automatic notifications about new "Glue" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a>
 ## A lightweight view and resource injection library for android 
