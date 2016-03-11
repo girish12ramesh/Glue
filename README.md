@@ -2,6 +2,31 @@
 ## A lightweight view and resource injection library for android 
 
 ###Usage
+#####gradle dependency
+Add below dependency to build.gradle
+
+```
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.rohitshampur.glue:glue:1.0.1'
+}
+```
+
+#####Maven dependency
+
+Add this dependency to pom.xml
+```
+<dependency>
+  <groupId>com.rohitshampur.glue</groupId>
+  <artifactId>glue</artifactId>
+  <version>1.0.1</version>
+  <type>pom</type>
+</dependency>
+```
+
 To start using this library create a class MyApplication extending Application class.
 
 ```
@@ -35,7 +60,7 @@ Now start using the library like this
 public class MainActivity extends AppCompatActivity {
 
     @StickToView
-    private TextView textView;
+    private TextView textView;  //variable name must be same as the id in the layout xml
     
     @StickToView(R.id.textView1)
     private TextView text1;
