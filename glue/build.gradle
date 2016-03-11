@@ -10,10 +10,10 @@ ext {
 
     libraryDescription = 'Simple view and resource injector library for android'
 
-    siteUrl = 'https://github.com/stormtheh4ck3r/Glue'
-    gitUrl = 'https://github.com/stormtheh4ck3r/Glue.git'
+    siteUrl = 'https://github.com/rohitshampur/Glue'
+    gitUrl = 'https://github.com/rohitshampur/Glue.git'
 
-    libraryVersion = '1.0.1'
+    libraryVersion = '1.0.2'
 
     developerId = 'rohitshampur'
     developerName = 'Rohit Shampur'
@@ -46,6 +46,6 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.2.0'
 
-    apply from: 'https://gist.githubusercontent.com/stormtheh4ck3r/cd64896163a915b0b080/raw/bc5876ce44dde4899ff400580ce3ed2df11b8dcc/install.gradle'
-    apply from: 'https://gist.githubusercontent.com/stormtheh4ck3r/bb6080a9fc0f1d227b3f/raw/ea91d10f2b4c475a77761142cc66a0711196baea/bintray.gradle'
+    apply from: 'https://gist.githubusercontent.com/rohitshampur/cd64896163a915b0b080/raw/bc5876ce44dde4899ff400580ce3ed2df11b8dcc/install.gradle'
+    apply from: 'https://gist.githubusercontent.com/rohitshampur/bb6080a9fc0f1d227b3f/raw/ea91d10f2b4c475a77761142cc66a0711196baea/bintray.gradle'
 }
